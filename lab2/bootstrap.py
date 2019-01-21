@@ -6,7 +6,17 @@ import numpy as np
 
 
 def boostrap(sample, sample_size, iterations):
-	# <---INSERT YOUR CODE HERE--->
+	new_samples = np.random.rand( iterations, sample_size)
+	data_mean = np.mean(new_samples)
+	iter_values = []
+	lower = 1000000
+	upper = 0
+	for i in range(0,iterations):
+		m = np.mean(new_samples[i,])
+		if m > upper:
+			upper = m
+		if m < lower:
+			lower = m
 	return data_mean, lower, upper
 
 
