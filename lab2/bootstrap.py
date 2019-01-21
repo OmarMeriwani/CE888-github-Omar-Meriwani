@@ -3,20 +3,16 @@ matplotlib.use('Agg')
 import pandas as pd
 import seaborn as sns
 import numpy as np
-
-
+from sklearn.utils import resample
 def boostrap(sample, sample_size, iterations):
-	new_samples = np.random.rand( iterations, sample_size)
-	data_mean = np.mean(new_samples)
-	iter_values = []
-	lower = 1000000
-	upper = 0
+	new_samples = []
 	for i in range(0,iterations):
-		m = np.mean(new_samples[i,])
-		if m > upper:
-			upper = m
-		if m < lower:
-			lower = m
+		d = np.random.choice(sample, size=sample_size)
+		new_samples.append(np.mean(d))
+	data_mean = np.mean(new_samples)
+	lower = np.percentile(new_samples,2.5)
+	upper = np.percentile(new_samples,97.5)
+
 	return data_mean, lower, upper
 
 
