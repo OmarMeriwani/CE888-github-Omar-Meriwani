@@ -10,47 +10,50 @@ d = data.to_latex()
 text_file = open("Output-jester.txt", "w")
 text_file.write(d)
 text_file.close()
+n_features = 4
 
+#Getting jokes and
 user_ratings = data.values
-user_preferences = range(0,user_ratings.shape[0])
-joke_features = np.random.random((user_ratings.shape[1]))
-#print(latent_joke_features)
-#print(len(user_preferences))
+user_preferences = np.random.random((user_ratings.shape[0],n_features))
+joke_features = np.random.random((user_ratings.shape[1], n_features))
 
+print(user_preferences)
+print(joke_features)
+'''
+#Creating two new arrays that will be changed in 10 percent
 user_preferences_array = list(range(len(user_preferences)))
 user_preferences_array = [i for i in user_preferences]
+
 joke_features_array = list(range(len(joke_features)))
 joke_features_array = [i for i in joke_features]
 
+#Getting the number or randoms and the range of randoms (from - to)
 count_of_randoms = int((len(user_preferences))/10)
-print(count_of_randoms)
 randoms_range = len(user_preferences) - 1
-print(randoms_range)
-user_features_randoms = [random.randint(0,randoms_range) for i in range(0,count_of_randoms)]
-print(len(user_features_randoms))
-users_changed_values = [user_preferences[i] for i in user_features_randoms]
-for i in user_features_randoms:
+count_of_randoms2 = int((len(joke_features))/10)
+randoms_range2 = len(joke_features) - 1
+
+print('The length of randomized items is: ',count_of_randoms, 'The range of random items is: ', randoms_range)
+
+#Random indices for user_features
+user_features_randoms10percent = [random.randint(0,randoms_range) for i in range(0,count_of_randoms)]
+joke_features_randoms10percent = [random.randint(0,randoms_range2) for i in range(0,count_of_randoms2)]
+
+#Changing the locations in the new two arrays, and storing the changed values in users_changed_values, jokes_changed_values
+users_changed_values = [user_preferences[i] for i in user_features_randoms10percent]
+for i in user_features_randoms10percent:
     user_preferences_array[i] = 99
-
-
-count_of_randoms = int((len(joke_features))/10)
-print(count_of_randoms)
-randoms_range = len(joke_features) - 1
-print(randoms_range)
-joke_features_randoms = [random.randint(0,randoms_range) for i in range(0,count_of_randoms)]
-print(len(joke_features_randoms))
-jokes_changed_values = [joke_features[i] for i in joke_features_randoms]
-for i in joke_features_randoms:
+jokes_changed_values = [joke_features[i] for i in joke_features_randoms10percent]
+for i in joke_features_randoms10percent:
     joke_features_array[i] = 99
 
-print(joke_features_array)
 
-
+'''
 def predict_rating(user_id, item_id):
     """ Predict a rating given a user_id and an item_id.
     """
-    user_preference = latent_user_preferences[user_id]
-    item_preference = latent_item_features[item_id]
+    user_preference = user_preferences[user_id]
+    item_preference = joke_features[item_id]
     return user_preference.dot(item_preference)
 
 
@@ -59,8 +62,8 @@ def train(user_id, item_id, rating, alpha=0.0001):
     prediction_rating = predict_rating(user_id, item_id)
     err = (prediction_rating - rating);
     # print err
-    user_pref_values = latent_user_preferences[user_id][:]
-    latent_user_preferences[user_id] -= alpha * err * latent_item_features[item_id]
+    user_pref_values = user_preferences[user_id][:]
+    user_preferences[user_id] -= alpha * err * latent_item_features[item_id]
     latent_item_features[item_id] -= alpha * err * user_pref_values
     return err
 
