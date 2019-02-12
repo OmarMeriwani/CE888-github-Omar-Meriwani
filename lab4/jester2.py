@@ -47,9 +47,6 @@ def train(user_id, joke_id, rating,user2, jokefeatures2, alpha=0.0001):
     err = (prediction_rating - rating);
     # print err
     user_pref_values = user2[user_id][:]
-    print('Array----------------------')
-    print(user2[user_id])
-    print('Array----------------------')
     user2[user_id] -= alpha * err * jokefeatures2[joke_id]
     jokefeatures2[joke_id] -= alpha * err * user_pref_values
     return err
@@ -65,7 +62,6 @@ def sgd(iterations=100000):
             for user_id in range(0, (user_preferences.shape[0])):
                 for joke_id in range(0, joke_features.shape[0]):
                     rating = foldsData[i][user_id][joke_id]
-                    print(rating)
                     if (rating != 99):
                         err = train(user_id, joke_id,rating,user_preferences, joke_features)
                         error.append(err)
