@@ -4,10 +4,10 @@ from IPython.display import Image
 import random
 folds = 5
 data = pd.read_csv("jester-data-1.csv")
-d = data.to_latex()
-text_file = open("Output-jester.txt", "w")
-text_file.write(d)
-text_file.close()
+#d = data.to_latex()
+#text_file = open("Output-jester.txt", "w")
+#text_file.write(d)
+#text_file.close()
 n_features = 2
 
 user_ratings = data.values
@@ -67,7 +67,7 @@ def sgd(iterations=100000):
                     rating = foldsData[i][user_id][joke_id]
                     print(rating)
                     if (rating != 99):
-                        err = train(user_id, joke_id,user_preferences, joke_features, rating)
+                        err = train(user_id, joke_id,rating,user_preferences, joke_features)
                         error.append(err)
             mse = (np.array(error) ** 2).mean()
             print(mse)
