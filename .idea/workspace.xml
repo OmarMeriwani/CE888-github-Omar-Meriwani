@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lab4/books.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="35" column="74" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="74" />
+            <state relative-caret-position="-198">
+              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="17" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -22,11 +22,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lab5/lab5.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lab5/data-exploration.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="669">
+              <caret line="128" column="142" selection-start-line="128" selection-start-column="142" selection-end-line="128" selection-end-column="142" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lab4/jester2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+            <state relative-caret-position="952">
+              <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -63,11 +84,14 @@
         <option value="$PROJECT_DIR$/lab4/Rec_correct.ipynb" />
         <option value="$PROJECT_DIR$/lab4/books.py" />
         <option value="$PROJECT_DIR$/lab4/jester2.py" />
+        <option value="$PROJECT_DIR$/lab5/lab5.ipynb" />
+        <option value="$PROJECT_DIR$/lab5/data-exploration.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="169" />
+    <option name="y" value="282" />
     <option name="width" value="1400" />
     <option name="height" value="830" />
   </component>
@@ -88,7 +112,7 @@
             <path>
               <item name="CE888 github Omar Meriwani" type="b2602c69:ProjectViewProjectNode" />
               <item name="CE888 github Omar Meriwani" type="462c0819:PsiDirectoryNode" />
-              <item name="lab4" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -100,6 +124,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Omar\Documents\GitHub\CE888 github Omar Meriwani\lab5" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Omar\Documents\GitHub\CE888 github Omar Meriwani\lab4" />
       <recent name="C:\Users\Omar\Documents\GitHub\CE888 github Omar Meriwani" />
@@ -269,12 +296,12 @@
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26542416" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26863754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891247" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39920425" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,16 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab4/jester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="15" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lab4/jester.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-723521176/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -524,22 +542,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab4/books.py">
+    <entry file="file://$PROJECT_DIR$/lab4/user_features.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab4/jester2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="35" column="74" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="74" />
+        <state relative-caret-position="952">
+          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab4/jester2.py">
+    <entry file="file://$PROJECT_DIR$/lab4/books.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+        <state relative-caret-position="-198">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab5/lab5.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab5/data-exploration.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="128" column="142" selection-start-line="128" selection-start-column="142" selection-end-line="128" selection-end-column="142" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
