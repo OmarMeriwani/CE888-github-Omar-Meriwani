@@ -22,16 +22,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lab5/lab5.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="24" />
+              <selected id="0" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lab5/data-exploration.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="669">
@@ -47,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/lab4/jester2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="952">
-              <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+              <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -84,8 +84,8 @@
         <option value="$PROJECT_DIR$/lab4/Rec_correct.ipynb" />
         <option value="$PROJECT_DIR$/lab4/books.py" />
         <option value="$PROJECT_DIR$/lab4/jester2.py" />
-        <option value="$PROJECT_DIR$/lab5/lab5.ipynb" />
         <option value="$PROJECT_DIR$/lab5/data-exploration.py" />
+        <option value="$PROJECT_DIR$/lab5/lab5.ipynb" />
       </list>
     </option>
   </component>
@@ -108,11 +108,6 @@
             <path>
               <item name="CE888 github Omar Meriwani" type="b2602c69:ProjectViewProjectNode" />
               <item name="CE888 github Omar Meriwani" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CE888 github Omar Meriwani" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CE888 github Omar Meriwani" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,7 +289,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26863754" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -551,7 +545,7 @@
     <entry file="file://$PROJECT_DIR$/lab4/jester2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
-          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -568,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab5/lab5.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lab5/data-exploration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="669">
@@ -582,6 +569,13 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab5/lab5.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
