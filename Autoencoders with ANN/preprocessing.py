@@ -1,5 +1,5 @@
 import pandas as pd
-import numba as np
+import numpy as np
 
 file1 = pd.read_csv('diabetes.csv')
 file1.dropna()
