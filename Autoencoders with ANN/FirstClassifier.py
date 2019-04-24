@@ -7,6 +7,8 @@ import keras.initializers
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import Normalizer
 from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import MinMaxScaler
+
 from sklearn.preprocessing import LabelEncoder
 import pickle
 import seaborn
@@ -15,7 +17,7 @@ from keras.layers import Input, Dense
 from keras.models import Model
 np.random.seed(1337)
 
-test = 'diabetes'
+test = 'heartattack'
 tobestored = False
 if test == 'diabetes':
     '''
@@ -34,6 +36,7 @@ if test == 'heartattack':
     X = [[float(j) for j in i] for i in X]
     X = np.array(X)
     df = pd.DataFrame(X)
+
     y = X[:, 10]
     X = X[:, [0,1,2,3,4,5,6,8,9]]
 if test == 'autism':
@@ -53,7 +56,7 @@ if test == 'autism':
     df.iloc[:,13] = le.fit_transform(df.iloc[:,13])
 
     y = df.iloc[:, 18].values
-    X = df.iloc[:, [1,2,3,4,5,6,15,14,13,11]].values
+    X = df.iloc[:, [1,2,3,4,15,14,13,11]].values
 
 
 s=seaborn.heatmap(df.corr(),cmap='coolwarm', linewidths=.5)
@@ -94,66 +97,129 @@ from keras.optimizers import SGD
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from sklearn.model_selection import StratifiedKFold
-WithAE = False
+from keras.layers import Activation
+from keras.layers import Flatten
+from keras.layers import BatchNormalization
+from keras.layers import GaussianNoise
+from keras.layers import GaussianDropout
+WithAE = True
+AEdim = 5
+dim = len(X[0])
 
-dim = len(X_train[0])
+#sc = MinMaxScaler()
+#X = sc.fit_transform(X)
+
 if WithAE == True:
     input_lyr = Input(shape=(dim,))
-    encoded = Dense(10, name='enc1', activation='relu')(input_lyr)
-    encoded = Dense(7, name='enc2',activation='relu')(encoded)
-    encoded = Dense(5, name='enc3',activation='relu')(encoded)
+    encoded = Dense(15, name='enc1', activation='relu')(input_lyr)
+    encoded = BatchNormalization()(encoded)
+    encoded = Dropout(rate=0.1)(encoded)
+    #encoded = GaussianNoise(stddev=0.05)(encoded)
+    encoded = Dense(15, name='enc2',activation='relu')(encoded)
+    #encoded = GaussianDropout(rate=0.5)(encoded)
+    encoded = Dense(13, name='enc3',activation='relu')(encoded)
+    encoded = Dense(13, name='enc4',activation='relu')(encoded)
+    #encoded = Dense(15, name='enc41',activation='relu')(encoded)
+    #encoded = Dropout(rate=0.1)(encoded)
+    encoded = Dense(AEdim, name='enc5',activation='relu')(encoded)
+    #encoded = Activation('softmax')(encoded)
 
-    decoded = Dense(5, name='dec1',activation='relu')(encoded)
-    decoded = Dense(7, name='dec2',activation='relu')(decoded)
-    decoded = Dense(dim, name='dec3',activation='relu')(decoded)
+    decoded = Dense(AEdim, name='dec1',activation='relu')(encoded)
+    #encoded = Dropout(rate=0.1)(encoded)
+    #decoded = Dense(15, name='dec21',activation='relu')(decoded)
+    decoded = Dense(13, name='dec2',activation='relu')(decoded)
+    decoded = Dense(13, name='dec3',activation='relu')(decoded)
+    #decoded = GaussianDropout(rate=0.5)(decoded)
+    decoded = Dense(15, name='dec4',activation='relu')(decoded)
+    #decoded = GaussianNoise(stddev=0.05)(decoded)
+    decoded = Dropout(rate=0.1)(decoded)
+    decoded = BatchNormalization()(decoded)
+    decoded = Dense(15, name='dec5',activation='relu')(decoded)
+    decoded = Dense(dim, name='dec6',activation='relu')(decoded)
     AE = Model(input_lyr, decoded)
     Encoder = Model(input_lyr,encoded)
 
     AE.compile(optimizer='adam', loss='mean_squared_error')
-    AE.fit(X,X,epochs=1000,batch_size=100,shuffle=False,verbose=True)
+    AE.fit(X,X,epochs=2000,batch_size=100,shuffle=True,verbose=True)
 
-encoding_dim = 8
-if WithAE == True:
-    dim = 5
+#encoding_dim = 8
+#if WithAE == True:
+#    dim = AEdim
 
 model = Sequential()
-if test == 'diabetes':
-
+model2 = Sequential()
+'''if test == 'diabetes':
     model.add(Dense(14, name='dense1', activation='relu', input_shape=(dim,)))
     model.add(Dense(2, name='dense2', activation='softmax'))
+
+    model2.add(Dense(14, name='dense1', activation='relu', input_shape=(AEdim,)))
+    model2.add(Dense(2, name='dense2', activation='softmax'))
 if test == 'heartattack':
     model.add(Dense(14, name='dense1',activation='relu', input_shape=(dim,)))
-    model.add(Dense(14, name='dense2',activation='relu'))
-    model.add(Dense(14, name='dense3',activation='relu'))
-    model.add(Dense(2, name='dense5', activation='relu'))
-if test == 'autism':
-    model.add(Dense(14, name='dense1',activation='relu', input_shape=(dim,)))
-    model.add(Dense(14, name='dense2',activation='relu'))
-    model.add(Dense(14, name='dense3',activation='relu'))
-    model.add(Dense(2, name='dense5', activation='relu'))
+    model.add(Dense(2, name='dense5', activation='softmax'))
+
+    model2.add(Dense(14, name='dense1',activation='relu', input_shape=(AEdim,)))
+    model2.add(Dense(2, name='dense5', activation='softmax'))
+
+if test == 'autism':'''
+#Threshold: 1.1001
+sd_value = 0.01
+samples_reduction = 0.5
+print(y.shape, X.shape)
+#X = X[:int(len(X) * samples_reduction)]
+#y = y[:int(len(y) * samples_reduction)]
+print(y.shape, X.shape)
+#model.add(GaussianNoise(stddev=sd_value, input_shape=(dim,)))
+#model.add(GaussianDropout(rate = 0.9))
+model.add(Dense(14, activation='relu', input_shape=(dim,)))
+model.add(Dense(2, name='dense5', activation='softmax'))
+
+#model.add(GaussianNoise(stddev=sd_value))
+#model.add(GaussianDropout(rate = 0.9))
+model2.add(Dense(14, activation='relu', input_shape=(AEdim,)))
+model2.add(Dense(2, name='dense5', activation='softmax'))
+
 folds = 5
 j = 0
 score= []
+score2= []
+X2 = X
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
+model2.compile(optimizer='adam', loss='mean_squared_error', metrics=['accuracy'])
+
 if WithAE == True:
-    X = Encoder.predict(X)
-kf= StratifiedKFold(n_splits=folds, random_state=121, shuffle=True)
-for train_index, test_index in kf.split(X, y):
-    X_train, X_test = X[train_index], X[test_index]
-    y_train, y_test = y[train_index], y[test_index]
-    y_train = keras.utils.np_utils.to_categorical(y_train)
-    y_test = keras.utils.np_utils.to_categorical(y_test)
-    model.fit(X_train,y_train,epochs=1000,batch_size=100,shuffle=False,verbose=0)
-    score.append( model.evaluate(X_test, y_test))
+    X2 = Encoder.predict(X)
+for k in range(0,2):
+    kf= StratifiedKFold(n_splits=folds, random_state=121, shuffle=True)
+    for train_index, test_index in kf.split(X, y):
+        X_train, X_test = X[train_index], X[test_index]
+        X_train2, X_test2 = X2[train_index], X2[test_index]
+        y_train, y_test = y[train_index], y[test_index]
+        y_train = keras.utils.np_utils.to_categorical(y_train)
+        y_test = keras.utils.np_utils.to_categorical(y_test)
+        model.fit(X_train,y_train,epochs=1000,batch_size=100,shuffle=False,verbose=0)
+        model2.fit(X_train2,y_train,epochs=1000,batch_size=100,shuffle=False,verbose=0)
+
+        score.append( model.evaluate(X_test, y_test))
+        score2.append( model2.evaluate(X_test2, y_test))
+
 avgacc = [acc for loss, acc in score]
 avgloss = [loss for loss, acc in score]
 
+avgacc2 = [acc for loss, acc in score2]
+avgloss2 = [loss for loss, acc in score2]
+
 avgacc =sum(avgacc) / len(avgacc)
 avgloss = sum(avgloss) / len(avgloss)
-print(avgacc, avgloss)
+
+avgacc2 =sum(avgacc2) / len(avgacc2)
+avgloss2 = sum(avgloss2) / len(avgloss2)
+
+print('Without AE: ', (avgacc2 * 100).__round__(2),'\t', (avgloss2 *100).__round__(2),'\t',(avgacc * 100).__round__(2), '\t',(avgloss*100).__round__(2))
+print('With AE: ',avgacc2, avgloss2)
 #model = pickle.load(open('mlp-diabetes2.sav','rb'))
 #score = model.score(X_test,y_test)
 #print(score)
 frequency = 2000
-duration = 1000
+duration = 500
 winsound.Beep(frequency, duration)
