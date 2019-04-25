@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/FirstClassifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1432">
-              <caret line="58" column="18" lean-forward="true" selection-end-line="225" />
+            <state relative-caret-position="714">
+              <caret line="58" column="18" selection-end-line="225" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -25,10 +25,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/Classifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state>
               <folding>
-                <element signature="e#0#52#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,7 +108,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,6 +134,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -315,8 +314,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29820052" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30205655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -378,10 +378,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lab4/user_features.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lab6/lab5.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
@@ -648,36 +648,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/Autism.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
           <caret column="47" selection-start-column="47" selection-end-column="47" />
         </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/SecondClassifier.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/heart-attack.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
           <caret column="67" selection-start-column="59" selection-end-column="67" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/diabetes.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/diabetes.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
         </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/AE2.py">
@@ -697,25 +697,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/heatmap-autism.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/FirstClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1432">
-          <caret line="58" column="18" lean-forward="true" selection-end-line="225" />
+        <state relative-caret-position="714">
+          <caret line="58" column="18" selection-end-line="225" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/heatmap-autism.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Autoencoders with ANN/Classifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state>
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,5 @@
-from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-from sklearn.neural_network import MLPClassifier
 import winsound
 import keras.initializers
 from keras.models import Sequential
@@ -63,9 +61,6 @@ s.set_xticklabels(s.get_xticklabels(),rotation=45,fontsize=5)
 if tobestored == True:
     plt.savefig('heatmap-'+ test +'.png')
 
-model = MLPClassifier(hidden_layer_sizes=(14, 14, 14, 14, 14, 14, 14), activation='relu', solver='lbfgs',learning_rate='adaptive')
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 WithAE = True
 AEdim = 5
 dim = len(X[0])
@@ -98,10 +93,8 @@ model = Sequential()
 model2 = Sequential()
 
 sd_value = 0.01
-samples_reduction = 0.5
 print(y.shape, X.shape)
-#X = X[:int(len(X) * samples_reduction)]
-#y = y[:int(len(y) * samples_reduction)]
+
 print(y.shape, X.shape)
 #model.add(GaussianNoise(stddev=sd_value, input_shape=(dim,)))
 #model.add(GaussianDropout(rate = 0.9))
@@ -149,11 +142,4 @@ avgloss = sum(avgloss) / len(avgloss)
 avgacc2 =sum(avgacc2) / len(avgacc2)
 avgloss2 = sum(avgloss2) / len(avgloss2)
 
-print('Without AE: ', (avgacc2 * 100).__round__(2),'\t', (avgloss2 *100).__round__(2),'\t',(avgacc * 100).__round__(2), '\t',(avgloss*100).__round__(2))
-print('With AE: ',avgacc2, avgloss2)
-#model = pickle.load(open('mlp-diabetes2.sav','rb'))
-#score = model.score(X_test,y_test)
-#print(score)
-frequency = 2000
-duration = 500
-winsound.Beep(frequency, duration)
+print('Results', (avgacc2 * 100).__round__(2),'\t', (avgloss2 *100).__round__(2),'\t',(avgacc * 100).__round__(2), '\t',(avgloss*100).__round__(2))
